@@ -1,140 +1,49 @@
-# =========================================================
-#  Jekyll + Minimal Mistakes Configuration
-#  https://mmistakes.github.io/minimal-mistakes/
-# =========================================================
-
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"
-
-# ---- Site Settings ----
+# Hexo Configuration
 title: "我的博客"
 subtitle: "记录技术、分享思考、探索世界"
-name: "我的博客"
 description: "一个关于技术、编程和生活的个人博客。"
-locale: "zh-CN"
+author: "Jay Chou"
+language: zh-CN
+timezone: "Asia/Shanghai"
+
 url: "https://jaychou8421-cpu.github.io"
-baseurl: ""
-repository: "jaychou8421-cpu/jaychou8421-cpu.github.io"
-teaser: "/assets/images/teaser.jpg"
+root: "/"
+permalink: ":year/:month/:day/:title/"
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
 
-# ---- Reading Files ----
-include:
-  - _pages
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: ":lang"
+skip_render:
 
-# ---- Conversion ----
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  auto_ids: true
-  syntax_highlighter: rouge
+new_post_name: ":title.md"
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ""
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
 
-# ---- Permalinks ----
-permalink: /posts/:title/
+highlight:
+  enable: false
 
-# ---- Collections ----
-collections:
-  posts:
-    output: true
+prismjs:
+  enable: false
 
-# ---- Defaults ----
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: true
-      related: true
-      show_date: true
-      comments: true
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: false
+# Use anzhiyu theme
+theme: anzhiyu
 
-# ---- Author ----
-author:
-  name: "Jay Chou"
-  avatar: "/assets/images/avatar.jpg"
-  bio: "一个热爱编程的开发者，探索 Web 开发、设计和一切有趣的事物。"
-  location: "China"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/jaychou8421-cpu"
-    - label: "Bilibili"
-      icon: "fab fa-fw fa-bilibili"
-      url: "https://space.bilibili.com/3546737574677246"
-    - label: "小黑盒"
-      icon: "fas fa-fw fa-gamepad"
-      url: "https://www.xiaoheihe.cn/app/user/profile/75610259"
-# ---- Footer ----
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/jaychou8421-cpu"
-    - label: "Bilibili"
-      icon: "fab fa-fw fa-bilibili"
-      url: "https://space.bilibili.com/3546737574677246"
-    - label: "小黑盒"
-      icon: "fas fa-fw fa-gamepad"
-      url: "https://www.xiaoheihe.cn/app/user/profile/75610259"
-# ---- Search ----
-search: true
-search_full_content: false
-search_provider: lunr
-
-# ---- Archives ----
-jekyll-archives:
-  enabled:
-    - tags
-    - categories
-  layouts:
-    tag: archive-taxonomy
-    category: archive-taxonomy
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
-
-# ---- Comments ----
-comments:
-  provider: giscus
-giscus:
-  repo: "jaychou8421-cpu/jaychou8421-cpu.github.io"
-  repo_id: ""
-  category: "General"
-  category_id: ""
-  theme: "preferred_color_scheme"
-  lang: "zh-CN"
-
-# ---- Analytics ----
-analytics:
-  provider: "custom"
-
-# ---- Plugins ----
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
-  - jekyll-archives
-
-# ---- Pagination ----
-paginate: 5
-paginate_path: /page:num/
-
-# ---- Atom Feed ----
-atom_feed:
-  path: "/feed.xml"
-
-# ---- Default Skin Override ----
-# The dark/light toggle is handled client-side via assets/css/custom.css
-
-
+deploy:
+  type: ""

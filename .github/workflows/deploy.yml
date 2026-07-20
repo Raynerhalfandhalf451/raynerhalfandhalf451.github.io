@@ -1,4 +1,4 @@
-name: Deploy Jekyll site to GitHub Pages
+name: Deploy Hexo to GitHub Pages
 
 on:
   push:
@@ -19,24 +19,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
-          bundler-cache: true
+          submodules: true
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+      - name: Install dependencies
+        run: |
+          npm install hexo-cli -g
+          npm install
+
+      - name: Build
+        run: hexo generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
   deploy:
     environment:

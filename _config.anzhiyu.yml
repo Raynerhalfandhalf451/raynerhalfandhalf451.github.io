@@ -1,0 +1,123 @@
+# ==============================
+# Anzhiyu Theme Config
+# ==============================
+
+# Menu
+menu:
+  文章:
+    归档: /archives/ || anzhiyu-icon-box-archive
+    分类: /categories/ || anzhiyu-icon-shapes
+    标签: /tags/ || anzhiyu-icon-tags
+  我的:
+    音乐馆: /music/ || anzhiyu-icon-music
+  关于:
+    关于本人: /about/ || anzhiyu-icon-paper-plane
+
+# Social Links
+social:
+  GitHub: https://github.com/jaychou8421-cpu || anzhiyu-icon-github
+  BiliBili: https://space.bilibili.com/3546737574677246 || anzhiyu-icon-bilibili
+
+# Author card
+author_status:
+  enable: true
+  statusImg: "https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png"
+  skills:
+    - 💻 全栈开发者
+    - 🌸 二次元爱好者
+    - 🎵 音乐收藏家
+    - 📝 技术博客作者
+
+# Avatar
+avatar:
+  img: /images/avatar.jpg
+  effect: true
+
+# Site info in sidebar
+site_info:
+  enable: true
+
+# Card settings
+card:
+  enable: true
+  padding: 0.8rem
+
+# Cover (article list)
+cover:
+  default_cover: https://bu.dusays.com/2023/04/01/64278e8a4efd9.png
+
+# Article meta
+post_meta:
+  page: date, categories, updated
+  post: date, categories, updated, wordcount
+
+# Read more button
+read_more_btn: true
+
+# Dark mode
+dark_mode:
+  enable: true
+  default: "system"
+  auto_change_mode: true
+
+# Search
+algolia_search:
+  enable: false
+
+local_search:
+  enable: true
+  preload: true
+
+# Tags
+tag:
+  enable: true
+
+# Categories
+category:
+  enable: true
+
+# Lazy load
+lazyload:
+  enable: true
+  field: site
+
+# Footer
+footer:
+  owner:
+    enable: true
+  custom_text: "❤️ 感谢访问"
+  copyright: false
+
+# PWA
+pwa:
+  enable: false
+
+# Comments
+comments:
+  enable: false
+
+# Website count
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# RSS
+feed:
+  enable: true
+  type: atom
+  limit: 20
+
+# Loading animation
+preloader: true
+
+# Giscus comment
+giscus:
+  enable: false
+  repo: jaychou8421-cpu/jaychou8421-cpu.github.io
+  repo_id: ""
+  category: "General"
+  category_id: ""
+  map: "pathname"
+  input_position: "top"
+  lang: "zh-CN"

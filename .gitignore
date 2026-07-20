@@ -1,14 +1,11 @@
-# OS files
+node_modules/
+public/
+.db
+*.log
 .DS_Store
 Thumbs.db
-
-# Editor
-*.swp
-*.swo
-*~
-.vscode/
-.idea/
-
-# Jekyll output
-_site/
-.jekyll-cache/
+themes/anzhiyu/.git
+themes/anzhiyu/node_modules
+themes/*/node_modules
+_config.landscape.yml
+npminstall-debug.log
