@@ -13,7 +13,7 @@ author_profile: false
 <meting-js
   server="netease"
   type="playlist"
-  id="YOUR_PLAYLIST_ID"
+  id="745510353"
   fixed="false"
   mini="false"
   autoplay="false"
