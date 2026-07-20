@@ -7,10 +7,10 @@ remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default"
 
 # ---- Site Settings ----
-title: "My Blog"
-subtitle: "Thoughts, stories, and ideas."
-name: "My Blog"
-description: "A personal blog about technology, programming, and life."
+title: "我的博客"
+subtitle: "记录技术、分享思考、探索世界"
+name: "我的博客"
+description: "一个关于技术、编程和生活的个人博客。"
 locale: "zh-CN"
 url: "https://jaychou8421-cpu.github.io"
 baseurl: ""
@@ -61,7 +61,7 @@ defaults:
 author:
   name: "Jay Chou"
   avatar: "/assets/images/avatar.jpg"
-  bio: "A passionate developer and tech enthusiast. Exploring web dev, design, and everything in between."
+  bio: "一个热爱编程的开发者，探索 Web 开发、设计和一切有趣的事物。"
   location: "China"
   links:
     - label: "GitHub"
@@ -107,7 +107,7 @@ comments:
 giscus:
   repo: "jaychou8421-cpu/jaychou8421-cpu.github.io"
   repo_id: ""
-  category: "Announcements"
+  category: "General"
   category_id: ""
   theme: "preferred_color_scheme"
   lang: "zh-CN"

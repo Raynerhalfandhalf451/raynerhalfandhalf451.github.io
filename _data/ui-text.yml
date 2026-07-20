@@ -1,0 +1,70 @@
+# ===========================================
+# Chinese UI Text Translations (zh-CN)
+# Overrides Minimal Mistakes default English text
+# ===========================================
+
+# Search
+ui-search-placeholder: "搜索..."
+ui-search-result: "找到 %d 篇相关文章"
+ui-search-no-results: "没有找到相关文章"
+
+# Post Meta
+ui-posted-label: "发表于"
+ui-updated-label: "更新于"
+ui-read-time: "%s 分钟阅读"
+ui-min-read: "阅读时长"
+ui-words-count: "约 %s 字"
+ui-related-posts: "相关文章"
+ui-related-posts-none: "暂无相关文章"
+
+# Taxonomies
+ui-tags-label: "标签"
+ui-categories-label: "分类"
+ui-tag-label: "标签"
+ui-category-label: "分类"
+
+# Share
+ui-share-label: "分享到"
+ui-share-on: "分享到 %s"
+
+# Comments
+ui-comments-label: "评论"
+ui-comments-toggle-label: "显示评论"
+ui-comments-warning: "评论已关闭"
+
+# TOC (Table of Contents)
+ui-toc-label: "目录"
+ui-toc-icon: "list"
+
+# Pagination
+ui-pagination-previous: "上一页"
+ui-pagination-next: "下一页"
+ui-pagination-page: "第 %d 页"
+ui-pagination-of: "共 %d 页"
+
+# Buttons
+ui-back-to-top: "回到顶部"
+ui-read-more: "阅读全文 →"
+ui-view-all: "查看全部"
+
+# Notice
+ui-notice-info: "提示"
+ui-notice-warning: "注意"
+ui-notice-success: "成功"
+ui-notice-danger: "危险"
+
+# Newsletter
+ui-newsletter-label: "订阅更新"
+ui-newsletter-placeholder: "输入邮箱地址"
+ui-newsletter-submit: "订阅"
+ui-newsletter-success: "订阅成功！"
+ui-newsletter-error: "订阅失败，请重试"
+
+# Cookie consent
+ui-cookie-consent: "本网站使用 Cookie 来改善您的浏览体验。"
+ui-cookie-accept: "知道了"
+ui-cookie-reject: "拒绝"
+
+# Footer
+ui-footer-powered: "由 %s 驱动"
+ui-footer-theme: "主题"

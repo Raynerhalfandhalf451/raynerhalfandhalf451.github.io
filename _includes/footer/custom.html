@@ -1,10 +1,9 @@
-<!-- Dark/Light Mode Toggle -->
+<!-- ===== Dark/Light Mode Toggle ===== -->
 <script>
 (function() {
   const STORAGE_KEY = "mm_theme";
   const html = document.documentElement;
 
-  // Get stored theme or system preference
   function getTheme() {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "light" || stored === "dark") return stored;
@@ -14,20 +13,24 @@
   function setTheme(theme) {
     html.setAttribute("data-theme", theme);
     localStorage.setItem(STORAGE_KEY, theme);
-    // Update toggle button if exists
     const btn = document.getElementById("theme-toggle-btn");
     if (btn) {
       btn.innerHTML = theme === "dark"
         ? `<i class="fas fa-sun"></i>`
         : `<i class="fas fa-moon"></i>`;
-      btn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+      btn.setAttribute("aria-label", theme === "dark" ? "切换到亮色模式" : "切换到暗色模式");
+    }
+    // Sync giscus theme
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      iframe.contentWindow.postMessage({
+        giscus: { setConfig: { theme: theme === "dark" ? "dark" : "light" } }
+      }, "https://giscus.app");
     }
   }
 
-  // Apply theme immediately to avoid flash
   setTheme(getTheme());
 
-  // Add toggle button after nav loads
   document.addEventListener("DOMContentLoaded", function() {
     const nav = document.querySelector(".greedy-nav .visible-links");
     if (nav) {
@@ -36,27 +39,13 @@
       btn.id = "theme-toggle-btn";
       btn.className = "btn btn--primary btn--small";
 
-      // giscus theme sync
-      function syncGiscusTheme(theme) {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (iframe) {
-          iframe.contentWindow.postMessage({
-            giscus: { setConfig: { theme: theme === "dark" ? "dark" : "light" } }
-          }, "https://giscus.app");
-        }
-      }
-      window.__syncGiscus = syncGiscusTheme;
-
       btn.addEventListener("click", function() {
         const current = html.getAttribute("data-theme");
-        const next = current === "dark" ? "light" : "dark";
-        setTheme(next);
-        syncGiscusTheme(next);
+        setTheme(current === "dark" ? "light" : "dark");
       });
       li.appendChild(btn);
       nav.appendChild(li);
 
-      // Initialize button state
       const initial = getTheme();
       btn.innerHTML = initial === "dark"
         ? `<i class="fas fa-sun"></i>`
@@ -65,3 +54,62 @@
   });
 })();
 </script>
+
+<!-- ===== Music Player (网易云音乐) ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+<meting-js
+  server="netease"
+  type="playlist"
+  id="YOUR_PLAYLIST_ID"
+  fixed="true"
+  mini="true"
+  autoplay="false"
+  theme="#00adb5"
+  loop="all"
+  order="list"
+  preload="auto"
+  volume="0.3"
+  list-folded="true"
+  list-max-height="400px"
+  lang="zh-CN">
+</meting-js>
+
+<style>
+  /* Music player dark mode overrides */
+  [data-theme="dark"] .aplayer {
+    background: #1e2128 !important;
+    color: #eaeaea !important;
+  }
+  [data-theme="dark"] .aplayer .aplayer-info {
+    border-color: #3e4451 !important;
+  }
+  [data-theme="dark"] .aplayer .aplayer-list {
+    background: #1e2128 !important;
+    border-color: #3e4451 !important;
+  }
+  [data-theme="dark"] .aplayer .aplayer-list ol li {
+    border-color: #3e4451 !important;
+    color: #b0b0b0 !important;
+  }
+  [data-theme="dark"] .aplayer .aplayer-list ol li:hover {
+    background: #252a34 !important;
+  }
+  [data-theme="dark"] .aplayer .aplayer-list ol li.aplayer-list-light {
+    background: #252a34 !important;
+  }
+  [data-theme="dark"] .aplayer.aplayer-fixed .aplayer-body {
+    background: #1e2128 !important;
+  }
+  [data-theme="dark"] .aplayer.aplayer-fixed .aplayer-lrc:before,
+  [data-theme="dark"] .aplayer.aplayer-fixed .aplayer-lrc:after {
+    background: transparent !important;
+  }
+  /* Adjust for better mobile */
+  @media (max-width: 768px) {
+    .aplayer.aplayer-fixed .aplayer-body {
+      max-width: 100% !important;
+    }
+  }
+</style>
