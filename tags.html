@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse posts by tag">
+    <title>Tags — My Blog</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="alternate" type="application/rss+xml" title="My Blog RSS Feed" href="feed.xml">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container">
+            <a href="index.html" class="logo">My Blog</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tags.html" class="active">Tags</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="feed.xml" class="rss-link" title="RSS Feed">📡</a></li>
+                <li><button id="theme-toggle" aria-label="切换暗色模式">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Tags</h1>
+            </div>
+        </section>
+
+        <section class="content container">
+            <div class="tag-list" id="tagList"></div>
+
+            <div class="posts-grid" id="tagPosts">
+                <article class="post-card" data-tags="blog,personal">
+                    <div class="post-card-content">
+                        <span class="post-date">July 20, 2026</span>
+                        <h3><a href="posts/hello-world.html">Hello, World!</a></h3>
+                        <p class="post-excerpt">Welcome to my new blog. This is my first post where I share what this blog is all about and what you can expect to find here.</p>
+                        <div class="post-tags">
+                            <span class="tag-pill">blog</span>
+                            <span class="tag-pill">personal</span>
+                        </div>
+                        <a href="posts/hello-world.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 My Blog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+    <script>
+        // Build tag list from post cards
+        const tagMap = {};
+        document.querySelectorAll(".post-card").forEach(card => {
+            (card.dataset.tags || "").split(",").forEach(t => {
+                t = t.trim();
+                if (!t) return;
+                tagMap[t] = (tagMap[t] || 0) + 1;
+            });
+        });
+
+        const tagList = document.getElementById("tagList");
+        const allBtn = document.createElement("button");
+        allBtn.className = "tag-pill active";
+        allBtn.dataset.tag = "";
+        allBtn.textContent = "All";
+        allBtn.addEventListener("click", () => filterByTag(""));
+        tagList.appendChild(allBtn);
+
+        Object.keys(tagMap).sort().forEach(tag => {
+            const btn = document.createElement("button");
+            btn.className = "tag-pill";
+            btn.dataset.tag = tag;
+            btn.innerHTML = `${tag} <span class="tag-count">(${tagMap[tag]})</span>`;
+            btn.addEventListener("click", () => filterByTag(tag));
+            tagList.appendChild(btn);
+        });
+
+        // Read ?tag= from URL for direct linking
+        const urlParams = new URLSearchParams(window.location.search);
+        const tagParam = urlParams.get("tag");
+        if (tagParam) {
+            filterByTag(tagParam);
+        }
+    </script>
+</body>
+</html>
