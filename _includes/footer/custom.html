@@ -1,0 +1,67 @@
+<!-- Dark/Light Mode Toggle -->
+<script>
+(function() {
+  const STORAGE_KEY = "mm_theme";
+  const html = document.documentElement;
+
+  // Get stored theme or system preference
+  function getTheme() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === "light" || stored === "dark") return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function setTheme(theme) {
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem(STORAGE_KEY, theme);
+    // Update toggle button if exists
+    const btn = document.getElementById("theme-toggle-btn");
+    if (btn) {
+      btn.innerHTML = theme === "dark"
+        ? `<i class="fas fa-sun"></i>`
+        : `<i class="fas fa-moon"></i>`;
+      btn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    }
+  }
+
+  // Apply theme immediately to avoid flash
+  setTheme(getTheme());
+
+  // Add toggle button after nav loads
+  document.addEventListener("DOMContentLoaded", function() {
+    const nav = document.querySelector(".greedy-nav .visible-links");
+    if (nav) {
+      const li = document.createElement("li");
+      const btn = document.createElement("button");
+      btn.id = "theme-toggle-btn";
+      btn.className = "btn btn--primary btn--small";
+
+      // giscus theme sync
+      function syncGiscusTheme(theme) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+          iframe.contentWindow.postMessage({
+            giscus: { setConfig: { theme: theme === "dark" ? "dark" : "light" } }
+          }, "https://giscus.app");
+        }
+      }
+      window.__syncGiscus = syncGiscusTheme;
+
+      btn.addEventListener("click", function() {
+        const current = html.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+        setTheme(next);
+        syncGiscusTheme(next);
+      });
+      li.appendChild(btn);
+      nav.appendChild(li);
+
+      // Initialize button state
+      const initial = getTheme();
+      btn.innerHTML = initial === "dark"
+        ? `<i class="fas fa-sun"></i>`
+        : `<i class="fas fa-moon"></i>`;
+    }
+  });
+})();
+</script>

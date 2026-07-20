@@ -4,7 +4,7 @@
 # =========================================================
 
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "dark"
+minimal_mistakes_skin: "default"
 
 # ---- Site Settings ----
 title: "My Blog"
@@ -15,7 +15,7 @@ locale: "zh-CN"
 url: "https://jaychou8421-cpu.github.io"
 baseurl: ""
 repository: "jaychou8421-cpu/jaychou8421-cpu.github.io"
-teaser:  # path to fallback teaser image
+teaser: "/assets/images/teaser.jpg"
 
 # ---- Reading Files ----
 include:
@@ -49,6 +49,7 @@ defaults:
       share: true
       related: true
       show_date: true
+      comments: true
   - scope:
       path: "_pages"
       type: pages
@@ -58,14 +59,20 @@ defaults:
 
 # ---- Author ----
 author:
-  name: "The Author"
-  avatar:  # "/assets/images/avatar.jpg"
-  bio: "A passionate developer and tech enthusiast."
+  name: "Jay Chou"
+  avatar: "/assets/images/avatar.jpg"
+  bio: "A passionate developer and tech enthusiast. Exploring web dev, design, and everything in between."
   location: "China"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jaychou8421-cpu"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:jaychou8421-cpu@users.noreply.github.com"
+    - label: "RSS"
+      icon: "fas fa-fw fa-rss-square"
+      url: "/feed.xml"
 
 # ---- Footer ----
 footer:
@@ -80,23 +87,34 @@ footer:
 # ---- Search ----
 search: true
 search_full_content: false
+search_provider: lunr
 
 # ---- Archives ----
 jekyll-archives:
   enabled:
     - tags
+    - categories
   layouts:
     tag: archive-taxonomy
+    category: archive-taxonomy
   permalinks:
     tag: /tags/:name/
-
-# ---- Analytics ----
-analytics:
-  provider: false
+    category: /categories/:name/
 
 # ---- Comments ----
 comments:
-  provider: false
+  provider: giscus
+giscus:
+  repo: "jaychou8421-cpu/jaychou8421-cpu.github.io"
+  repo_id: ""
+  category: "Announcements"
+  category_id: ""
+  theme: "preferred_color_scheme"
+  lang: "zh-CN"
+
+# ---- Analytics ----
+analytics:
+  provider: "custom"
 
 # ---- Plugins ----
 plugins:
@@ -114,3 +132,6 @@ paginate_path: /page:num/
 # ---- Atom Feed ----
 atom_feed:
   path: "/feed.xml"
+
+# ---- Default Skin Override ----
+# The dark/light toggle is handled client-side via assets/css/custom.css
