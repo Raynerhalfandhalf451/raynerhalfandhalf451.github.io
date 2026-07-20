@@ -8,3 +8,7 @@ Thumbs.db
 *~
 .vscode/
 .idea/
+
+# Jekyll output
+_site/
+.jekyll-cache/
