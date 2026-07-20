@@ -12,5 +12,5 @@ author_profile: true
 欢迎浏览文章，也欢迎通过以下方式与我联系：
 
 - [GitHub](https://github.com/jaychou8421-cpu)
-- [Bilibili](https://space.bilibili.com/YOUR_UID)
-- [小黑盒](https://www.xiaoheihe.cn/user/YOUR_ID)
+- [Bilibili](https://space.bilibili.com/3546737574677246)
+- [小黑盒](https://www.xiaoheihe.cn/app/user/profile/75610259)

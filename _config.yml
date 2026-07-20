@@ -69,10 +69,10 @@ author:
       url: "https://github.com/jaychou8421-cpu"
     - label: "Bilibili"
       icon: "fab fa-fw fa-bilibili"
-      url: "https://space.bilibili.com/YOUR_UID"
+      url: "https://space.bilibili.com/3546737574677246"
     - label: "小黑盒"
       icon: "fas fa-fw fa-gamepad"
-      url: "https://www.xiaoheihe.cn/user/YOUR_ID"
+      url: "https://www.xiaoheihe.cn/app/user/profile/75610259"
 # ---- Footer ----
 footer:
   links:
@@ -81,10 +81,10 @@ footer:
       url: "https://github.com/jaychou8421-cpu"
     - label: "Bilibili"
       icon: "fab fa-fw fa-bilibili"
-      url: "https://space.bilibili.com/YOUR_UID"
+      url: "https://space.bilibili.com/3546737574677246"
     - label: "小黑盒"
       icon: "fas fa-fw fa-gamepad"
-      url: "https://www.xiaoheihe.cn/user/YOUR_ID"
+      url: "https://www.xiaoheihe.cn/app/user/profile/75610259"
 # ---- Search ----
 search: true
 search_full_content: false
