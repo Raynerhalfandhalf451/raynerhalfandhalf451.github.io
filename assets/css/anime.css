@@ -1,0 +1,527 @@
+/* ===========================================
+   二次元 / Anime Style Override
+   Sakura Pink Theme for Minimal Mistakes
+   =========================================== */
+
+/* ---- Anime Color Palette ---- */
+:root {
+  --anime-pink: #FF8C9E;
+  --anime-pink-light: #FFB7C5;
+  --anime-pink-lighter: #FFE4EC;
+  --anime-purple: #B388EB;
+  --anime-purple-light: #D4B5F5;
+  --anime-mint: #7AE7C7;
+  --anime-mint-light: #B5F0E0;
+  --anime-yellow: #FFD93D;
+  --anime-sky: #8ECAE6;
+  --anime-bg: #FFF5F7;
+  --anime-bg-card: #FFFFFF;
+  --anime-text: #3D2C3D;
+  --anime-text-soft: #6B4C6B;
+  --anime-shadow: rgba(255, 140, 158, 0.15);
+  --anime-border: #FFD6DE;
+  --anime-gradient: linear-gradient(135deg, #FFB7C5, #B388EB, #7AE7C7);
+  --anime-code-bg: #FFF0F3;
+}
+
+/* ---- Light Theme Override ---- */
+[data-theme="light"] body {
+  background-color: var(--anime-bg);
+  color: var(--anime-text);
+}
+
+[data-theme="light"] a {
+  color: #B388EB;
+}
+[data-theme="light"] a:hover {
+  color: #FF8C9E;
+}
+
+/* Header / Masthead */
+[data-theme="light"] .masthead {
+  background: rgba(255, 245, 247, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 2px solid var(--anime-border);
+}
+
+[data-theme="light"] .masthead .greedy-nav a {
+  color: var(--anime-text-soft);
+  font-weight: 600;
+}
+[data-theme="light"] .masthead .greedy-nav a:hover {
+  color: var(--anime-pink);
+}
+[data-theme="light"] .greedy-nav .visible-links a::before {
+  background: var(--anime-gradient);
+  height: 3px;
+  border-radius: 3px;
+}
+[data-theme="light"] .greedy-nav .hidden-links {
+  background: #FFF5F7;
+  border: 2px solid var(--anime-border);
+  border-radius: 16px;
+}
+[data-theme="light"] .greedy-nav .hidden-links a {
+  color: var(--anime-text-soft);
+}
+
+/* Page Content */
+[data-theme="light"] .page,
+[data-theme="light"] .archive {
+  background: transparent;
+}
+
+[data-theme="light"] .page__title {
+  color: var(--anime-text);
+  font-weight: 800;
+  position: relative;
+}
+[data-theme="light"] .page__title::after {
+  content: " ✿";
+  color: var(--anime-pink);
+  font-size: 0.7em;
+}
+
+[data-theme="light"] .page__content h1,
+[data-theme="light"] .page__content h2,
+[data-theme="light"] .page__content h3,
+[data-theme="light"] .page__content h4 {
+  color: var(--anime-text);
+}
+[data-theme="light"] .page__content h2 {
+  position: relative;
+  padding-left: 16px;
+}
+[data-theme="light"] .page__content h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  background: var(--anime-gradient);
+  border-radius: 4px;
+}
+
+/* Sidebar */
+[data-theme="light"] .sidebar {
+  background: transparent;
+}
+[data-theme="light"] .sidebar .author__name {
+  color: var(--anime-text);
+  font-weight: 800;
+}
+[data-theme="light"] .sidebar .author__bio {
+  color: var(--anime-text-soft);
+}
+[data-theme="light"] .sidebar .author__avatar img {
+  border: 3px solid var(--anime-pink-light);
+  box-shadow: 0 4px 20px var(--anime-shadow);
+  transition: transform 0.3s;
+}
+[data-theme="light"] .sidebar .author__avatar img:hover {
+  transform: scale(1.05);
+}
+[data-theme="light"] .sidebar .author__urls {
+  background: #FFFFFF;
+  border: 2px solid var(--anime-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px var(--anime-shadow);
+}
+[data-theme="light"] .sidebar .author__urls a {
+  color: var(--anime-purple);
+  border-radius: 8px;
+}
+[data-theme="light"] .sidebar .author__urls a:hover {
+  background: var(--anime-pink-lighter);
+  color: var(--anime-pink);
+}
+[data-theme="light"] .sidebar .nav__list .nav__items {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 2px solid var(--anime-border);
+  box-shadow: 0 4px 16px var(--anime-shadow);
+}
+[data-theme="light"] .sidebar .nav__list .nav__items a {
+  color: var(--anime-text-soft);
+}
+[data-theme="light"] .sidebar .nav__list .nav__items a:hover {
+  color: var(--anime-pink);
+}
+
+/* Post Cards & Archive */
+[data-theme="light"] .archive__item-title a {
+  color: var(--anime-text);
+}
+[data-theme="light"] .archive__item-title a:hover {
+  color: var(--anime-pink);
+}
+[data-theme="light"] .archive__item-teaser {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--anime-shadow);
+}
+[data-theme="light"] .list__item .archive__item-excerpt {
+  color: var(--anime-text-soft);
+}
+
+/* Tags */
+[data-theme="light"] .page__taxonomy a {
+  background: var(--anime-pink-lighter);
+  color: var(--anime-pink);
+  border-radius: 20px;
+  padding: 4px 14px;
+  border: none;
+  font-weight: 600;
+}
+[data-theme="light"] .page__taxonomy a:hover {
+  background: var(--anime-pink);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Taxonomies (tags/categories index) */
+[data-theme="light"] .taxonomy__index a {
+  color: var(--anime-purple);
+  border: 2px solid var(--anime-border);
+  border-radius: 12px;
+  padding: 8px 16px;
+}
+[data-theme="light"] .taxonomy__index a:hover {
+  background: var(--anime-pink-lighter);
+  border-color: var(--anime-pink-light);
+}
+[data-theme="light"] .taxonomy__section .archive__item-title a {
+  color: var(--anime-text);
+}
+[data-theme="light"] .taxonomy__section .archive__item-title a:hover {
+  color: var(--anime-pink);
+}
+
+/* Buttons */
+[data-theme="light"] .btn {
+  background: #FFFFFF;
+  border: 2px solid var(--anime-border);
+  color: var(--anime-text-soft);
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 8px 20px;
+  transition: all 0.3s;
+}
+[data-theme="light"] .btn:hover {
+  border-color: var(--anime-pink);
+  color: var(--anime-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--anime-shadow);
+}
+[data-theme="light"] .btn--primary {
+  background: linear-gradient(135deg, #FFB7C5, #B388EB);
+  color: #FFFFFF;
+  border: none;
+}
+[data-theme="light"] .btn--primary:hover {
+  background: linear-gradient(135deg, #FF8C9E, #9B6FE0);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(255, 140, 158, 0.4);
+}
+
+/* Code Blocks */
+[data-theme="light"] pre,
+[data-theme="light"] code {
+  background: var(--anime-code-bg);
+  color: var(--anime-text);
+  border-radius: 8px;
+}
+[data-theme="light"] div.highlighter-rouge {
+  background: var(--anime-code-bg);
+  border: 2px solid var(--anime-border);
+  border-radius: 12px;
+}
+[data-theme="light"] p code,
+[data-theme="light"] li code {
+  background: var(--anime-pink-lighter);
+  color: #D45A6E;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+[data-theme="light"] .highlight {
+  background: var(--anime-code-bg);
+}
+
+/* Blockquotes */
+[data-theme="light"] blockquote {
+  background: linear-gradient(135deg, #FFF5F7, #F5F0FF);
+  border-left: 4px solid var(--anime-gradient);
+  border-radius: 0 12px 12px 0;
+  color: var(--anime-text-soft);
+  padding: 16px 24px;
+}
+
+/* Tables */
+[data-theme="light"] thead {
+  background: var(--anime-gradient);
+  color: #FFFFFF;
+}
+[data-theme="light"] th {
+  font-weight: 700;
+}
+[data-theme="light"] th,
+[data-theme="light"] td {
+  border-color: var(--anime-border);
+}
+[data-theme="light"] tbody tr:nth-child(even) {
+  background: #FFF5F7;
+}
+
+/* Notice boxes */
+[data-theme="light"] .notice {
+  border: 2px solid var(--anime-border);
+  border-radius: 16px;
+  background: #FFFFFF;
+  color: var(--anime-text);
+}
+[data-theme="light"] .notice--primary {
+  background: #F5F0FF;
+  border-color: var(--anime-purple-light);
+}
+
+/* Pagination */
+[data-theme="light"] .pagination a {
+  color: var(--anime-purple);
+  border: 2px solid var(--anime-border);
+  border-radius: 10px;
+  padding: 6px 14px;
+}
+[data-theme="light"] .pagination a:hover {
+  background: var(--anime-pink-lighter);
+  border-color: var(--anime-pink-light);
+}
+[data-theme="light"] .pagination .current {
+  background: var(--anime-gradient);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Footer */
+[data-theme="light"] .page__footer {
+  background: linear-gradient(180deg, transparent, #FFF0F5);
+  border-top: 2px solid var(--anime-border);
+}
+[data-theme="light"] .page__footer a {
+  color: var(--anime-purple);
+}
+
+/* TOC */
+[data-theme="light"] .toc .nav__title {
+  background: var(--anime-gradient);
+  color: #FFFFFF;
+  border-radius: 12px 12px 0 0;
+}
+[data-theme="light"] .toc .nav__items {
+  background: #FFFFFF;
+  border: 2px solid var(--anime-border);
+  border-radius: 0 0 12px 12px;
+  border-top: none;
+}
+[data-theme="light"] .toc .nav__items a {
+  color: var(--anime-text-soft);
+  border-bottom: 1px solid var(--anime-border);
+}
+[data-theme="light"] .toc .nav__items a:hover,
+[data-theme="light"] .toc .nav__items a.active {
+  color: var(--anime-pink);
+}
+
+/* Search */
+[data-theme="light"] .search-content .search-input {
+  background: #FFFFFF;
+  border: 2px solid var(--anime-border);
+  border-radius: 12px;
+  color: var(--anime-text);
+}
+[data-theme="light"] .search-content .search-input:focus {
+  border-color: var(--anime-pink);
+  box-shadow: 0 0 0 3px var(--anime-shadow);
+}
+
+/* Breadcrumbs */
+[data-theme="light"] .breadcrumbs {
+  border-bottom: 2px solid var(--anime-border);
+}
+[data-theme="light"] .breadcrumbs a {
+  color: var(--anime-purple);
+}
+
+/* Related Posts */
+[data-theme="light"] .page__related {
+  border-top: 2px solid var(--anime-border);
+}
+
+/* ===== Dark Mode Anime Override ===== */
+[data-theme="dark"] {
+  --anime-bg-dark: #1A1025;
+  --anime-bg-card-dark: #2D1B3E;
+  --anime-text-dark: #F0E6F6;
+  --anime-text-soft-dark: #C9B0D9;
+  --anime-border-dark: #3D2A50;
+  --anime-shadow-dark: rgba(179, 136, 235, 0.15);
+}
+
+[data-theme="dark"] body {
+  background-color: #1A1025;
+  color: #F0E6F6;
+}
+[data-theme="dark"] .masthead {
+  background: rgba(26, 16, 37, 0.92);
+  border-bottom-color: #3D2A50;
+}
+[data-theme="dark"] .page {
+  background: transparent;
+}
+[data-theme="dark"] .page__title {
+  color: #F0E6F6;
+}
+[data-theme="dark"] .page__content h1,
+[data-theme="dark"] .page__content h2,
+[data-theme="dark"] .page__content h3,
+[data-theme="dark"] .page__content h4 {
+  color: #F0E6F6;
+}
+[data-theme="dark"] .sidebar .author__urls {
+  background: #2D1B3E;
+  border-color: #3D2A50;
+}
+[data-theme="dark"] .sidebar .author__name {
+  color: #F0E6F6;
+}
+[data-theme="dark"] .sidebar .author__bio {
+  color: #C9B0D9;
+}
+[data-theme="dark"] .sidebar .author__urls a {
+  color: #B388EB;
+}
+[data-theme="dark"] .sidebar .nav__list .nav__items {
+  background: #2D1B3E;
+  border-color: #3D2A50;
+}
+[data-theme="dark"] .page__footer {
+  background: linear-gradient(180deg, transparent, #1A1025);
+  border-top-color: #3D2A50;
+}
+[data-theme="dark"] .toc .nav__items {
+  background: #2D1B3E;
+  border-color: #3D2A50;
+}
+[data-theme="dark"] blockquote {
+  background: linear-gradient(135deg, #2D1B3E, #1A1025);
+  border-left-color: #B388EB;
+}
+
+/* ===== Sakura Floating Petals Animation ===== */
+.sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+.sakura-petal {
+  position: absolute;
+  top: -20px;
+  width: 14px;
+  height: 14px;
+  background: var(--anime-pink-light);
+  border-radius: 50% 0 50% 0;
+  opacity: 0;
+  animation: sakuraFall linear infinite;
+}
+
+@keyframes sakuraFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotate(0deg) scale(0.5);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg) scale(1.2);
+  }
+}
+
+/* Petal variations */
+.sakura-petal:nth-child(1) { left: 5%;  width: 12px; height: 12px; animation-duration: 12s; animation-delay: 0s; }
+.sakura-petal:nth-child(2) { left: 15%; width: 10px; height: 10px; animation-duration: 15s; animation-delay: 2s; background: #FFD6DE; }
+.sakura-petal:nth-child(3) { left: 25%; width: 16px; height: 16px; animation-duration: 18s; animation-delay: 4s; }
+.sakura-petal:nth-child(4) { left: 35%; width: 8px;  height: 8px;  animation-duration: 14s; animation-delay: 1s; background: #FFE4EC; }
+.sakura-petal:nth-child(5) { left: 50%; width: 14px; height: 14px; animation-duration: 16s; animation-delay: 3s; }
+.sakura-petal:nth-child(6) { left: 60%; width: 11px; height: 11px; animation-duration: 13s; animation-delay: 5s; background: #B388EB; opacity: 0.3; }
+.sakura-petal:nth-child(7) { left: 70%; width: 15px; height: 15px; animation-duration: 17s; animation-delay: 2s; }
+.sakura-petal:nth-child(8) { left: 80%; width: 9px;  height: 9px;  animation-duration: 19s; animation-delay: 6s; background: #FFD6DE; }
+.sakura-petal:nth-child(9) { left: 90%; width: 13px; height: 13px; animation-duration: 11s; animation-delay: 0s; }
+.sakura-petal:nth-child(10) { left: 45%; width: 10px; height: 10px; animation-duration: 20s; animation-delay: 7s; background: #FFE4EC; }
+.sakura-petal:nth-child(11) { left: 8%;  width: 14px; height: 14px; animation-duration: 14s; animation-delay: 4s; }
+.sakura-petal:nth-child(12) { left: 72%; width: 12px; height: 12px; animation-duration: 16s; animation-delay: 8s; }
+.sakura-petal:nth-child(13) { left: 30%; width: 8px;  height: 8px;  animation-duration: 12s; animation-delay: 3s; background: #B388EB; opacity: 0.2; }
+.sakura-petal:nth-child(14) { left: 55%; width: 15px; height: 15px; animation-duration: 18s; animation-delay: 5s; }
+.sakura-petal:nth-child(15) { left: 85%; width: 10px; height: 10px; animation-duration: 15s; animation-delay: 1s; }
+
+/* ===== Cute Selection Style ===== */
+[data-theme="light"] ::selection {
+  background: var(--anime-pink-light);
+  color: var(--anime-text);
+}
+
+/* ===== Cute Scrollbar ===== */
+[data-theme="light"] ::-webkit-scrollbar {
+  width: 8px;
+}
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: var(--anime-bg);
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: var(--anime-gradient);
+  border-radius: 4px;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--anime-pink);
+}
+
+/* ===== Cute Focus Styles ===== */
+[data-theme="light"] *:focus-visible {
+  outline: 3px solid var(--anime-pink-light);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ===== Emoji Decorations ===== */
+[data-theme="light"] .archive__item-title a::before {
+  content: "📄 ";
+  font-size: 0.8em;
+}
+[data-theme="light"] .taxonomy__section h2::before {
+  content: "🏷️ ";
+}
+[data-theme="light"] .page__related h2::before {
+  content: "🔗 ";
+}
+
+/* Reduce animation for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .sakura-petal {
+    display: none;
+  }
+}
